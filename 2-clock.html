@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<style>
+    #root {
+        display: flex;
+        border: 5px solid black;
+        width: 300px;
+        height: 100px;
+        text-align: center;
+        justify-content: center;
+        font-size: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: darkslateblue;
+        letter-spacing: 5px;
+        color: white;
+        padding: 10px;
+        border-radius: 200px;
+    }
+    h1{
+        padding-left: 10px;
+        padding-right: 10px;
+    }    
+</style>
+<body>
+    <div id="root">
+        <h1 id="one">01</h1>
+        <h1>:</h1>
+        <h1 id="two">02</h1>
+        <h1>:</h1>
+        <h1 id="three">03</h1>
+    </div>
+</body>
+<script>
+    let one = document.getElementById('one')
+    let two = document.getElementById('two')
+    let three = document.getElementById('three')
+    
+    setInterval(()=>
+    {
+        let date =  new Date()
+        let h = date.getHours() ,m = date.getMinutes() ,s= date.getSeconds()
+        
+        one.innerHTML = h
+        two.innerHTML = m
+        three.innerHTML = s
+
+        if(h<10){one.innerHTML= '0'+h}
+        if(m<10){two.innerHTML= '0'+m}
+        if(s<10){three.innerHTML= '0'+s}
+
+    },1000)
+    
+</script>
+</html>

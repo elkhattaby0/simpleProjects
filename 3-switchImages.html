@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {background-color: #141414; color: white;}
+</style>
+<body>
+    <div id="root"></div>
+</body>
+<script>
+    let root = document.getElementById('root')
+
+    let arr = ["pic/img100.jpg", "pic/img101.png", "pic/img102.jpg"]
+
+    let border = document.createElement('div')
+    root.appendChild(border)
+
+    let borderChild = document.createElement('div')
+    border.appendChild(borderChild)
+    let img = document.createElement('img') 
+    img.src = arr[0]
+    borderChild.appendChild(img)
+    
+    let one = document.createElement('img')
+    one.src = arr[0]
+    let two = document.createElement('img')
+    two.src = arr[1]
+    let three = document.createElement('img')
+    three.src = arr[2]
+
+    border.appendChild(one)
+    border.appendChild(two)
+    border.appendChild(three)
+    
+    //css
+    border.style.height = '400px'
+    border.style.width = '300px'
+    // border.style.border = '1px solid white'
+    // border.style.display = 'flex'
+    border.style.justifyContent = 'center'
+    border.style.alignContent = 'center'
+    borderChild.style.height = '300px'
+    borderChild.style.width = '300px'
+    borderChild.style.border = '1px solid white'
+    borderChild.style.marginTop = '20px'
+    img.style.height = '300px'
+    img.style.width = '300px'
+
+    one.style.height = '50px'
+    one.style.width = '50px'
+    one.style.border = '1px solid white'
+    two.style.height = '50px'
+    two.style.width = '50px'
+    two.style.border = '1px solid white'
+    three.style.height = '50px'
+    three.style.width = '50px'
+    three.style.border = '1px solid white'
+    one.style.marginTop = '20px'
+
+
+    one.onclick = ()=> {
+        img.src = arr[0]
+    }
+    two.onclick = ()=> {
+        img.src = arr[1]
+        this.style.backgroundColor = 'black'
+        
+    }
+    three.onclick = ()=> {
+        img.src = arr[2]
+    }
+    // img.onmouseout = ()=> {
+    //     img.style.height = '300px'
+    //     img.style.width = '300px'
+    // }
+    // img.onmouseover = ()=> {
+    //     img.style.backgroundSize = '400px'
+    //     // img.style.backdropFilter = 'balck'
+
+    //     // img.style.width = '400px'
+    // }
+</script>
+</html>
